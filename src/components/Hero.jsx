@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import MagneticButton from "./MagneticButton";
-import resume from "../assets/Dinesh_Resume.pdf";
+import resume from "../assets/Dinesh_Suwalkya_Software_Engineer_Resume.pdf";
 import { useState } from "react";
 
 
