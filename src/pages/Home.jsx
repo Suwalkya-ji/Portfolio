@@ -5,7 +5,8 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import About from "../components/About"
+import About from "../components/About";
+import Experience from "../components/Experience";
 
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
 
   return (
     <div
-      className="relative min-h-screen dark-gradient overflow-x-hidden"
+      className="relative min-h-screen bg-[#FAFAF8] overflow-x-hidden"
       onMouseMove={(e) =>
         setPos({ x: e.clientX, y: e.clientY })
       }
@@ -29,7 +30,8 @@ const Home = () => {
 
       <Navbar />
       <Hero />
-      <About/>
+      <About />
+      <Experience />
       <Skills />
       <Projects />
       <Contact />

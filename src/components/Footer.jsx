@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="py-12 border-t border-white/10 text-center text-gray-500 text-sm">
-      © {new Date().getFullYear()} Dinesh.dev | All Rights Reserved.
+    <footer className="py-8 bg-[#FAFAF8] border-t border-[#DCE2F7] text-center text-[#6E7977] text-xs font-medium">
+      © {new Date().getFullYear()} Dinesh.dev | Software Engineer Portfolio. All Rights Reserved.
     </footer>
   );
 };

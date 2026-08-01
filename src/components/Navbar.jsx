@@ -1,132 +1,98 @@
 import { motion } from "framer-motion";
-import {useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
+import resume from "../assets/Dinesh_Suwalkya_Software_Engineer_Resume.pdf";
 import MagneticButton from "./MagneticButton";
-import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
   const [active, setActive] = useState("home");
 
-    useEffect(() => {
-      const sections = document.querySelectorAll("section");
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActive(entry.target.id);
-            }
-          });
-        },
-        { threshold: 0.6 }
-      );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-      sections.forEach((section) => observer.observe(section));
+    sections.forEach((section) => observer.observe(section));
 
-      return () => observer.disconnect();
-    }, []);
-
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
       <motion.nav
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-black/40 border-b border-white/10"
+        className="fixed top-0 left-0 w-full z-50 bg-[#FAFAF8]/90 backdrop-blur-md border-b border-[#DCE2F7] shadow-sm"
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-          {/* LEFT - Logo */}
-          <div className="flex items-center">
+          {/* LEFT - Brand Logo */}
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-[#005C55] flex items-center justify-center text-white text-xs font-bold font-heading shadow-sm">
+              DS
+            </div>
             <a
               href="#home"
-              className="text-xl md:text-2xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent"
+              className="text-xl font-bold font-heading tracking-tight text-[#141B2B]"
             >
               Dinesh.dev
             </a>
           </div>
 
           {/* CENTER - Nav Links */}
-          <div className="hidden md:flex justify-center gap-10 text-gray-300">
-
-            <a
-               href="#home"
-               className = {`transition ${
-                            active === "home"
-                            ? "text-white border-b-2 border-indigo-400 pb-1"
-                            : "text-gray-300 hover:text-white"
+          <div className="hidden md:flex items-center gap-8 text-sm">
+            {[
+              { id: "home", label: "Home" },
+              { id: "about", label: "About" },
+              { id: "experience", label: "Experience" },
+              { id: "projects", label: "Projects" },
+              { id: "skills", label: "Skills" },
+              { id: "contact", label: "Contact" },
+            ].map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                className={`transition-colors font-medium ${
+                  active === link.id
+                    ? "text-[#005C55] font-semibold border-b-2 border-[#005C55] pb-1"
+                    : "text-[#3E4947] hover:text-[#141B2B]"
                 }`}
-            >
-              Home
-            </a>
-
-            <a
-               href="#about"
-               className = {`transition ${
-                            active === "about"
-                            ? "text-white border-b-2 border-indigo-400 pb-1"
-                            : "text-gray-300 hover:text-white"
-                }`}
-            >
-              About
-            </a>
-            
-            <a
-               href="#skills"
-               className = {`transition ${
-                            active === "skills"
-                            ? "text-white border-b-2 border-indigo-400 pb-1"
-                            : "text-gray-300 hover:text-white"
-                }`}
-            >
-              Skills
-            </a>
-
-            <a
-               href="#projects"
-               className = {`transition ${
-                            active === "projects"
-                            ? "text-white border-b-2 border-indigo-400 pb-1"
-                            : "text-gray-300 hover:text-white"
-                }`}
-            >
-              Projects
-            </a>
-
-            <a
-               href="#contact"
-               className = {`transition ${
-                            active === "contact"
-                            ? "text-white border-b-2 border-indigo-400 pb-1"
-                            : "text-gray-300 hover:text-white"
-                }`}
-            >
-              Contact
-            </a>
-
-            
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
-          {/* RIGHT - Hire Me */}
-          <div className="hidden md:flex justify-end">
+          {/* RIGHT - Resume Button */}
+          <div className="hidden md:flex items-center gap-3">
             <MagneticButton>
               <a
-                href="#contact"
-                className="flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-indigo-500 text-white font-medium hover:opacity-90 transition"
+                href={resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-5 py-2 rounded-full bg-[#005C55] text-white text-xs font-semibold hover:bg-[#0F766E] transition shadow-sm"
               >
-                Hire Me
-                <MdKeyboardDoubleArrowDown className="text-lg" />
+                <span>Resume</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </MagneticButton>
           </div>
 
           {/* MOBILE MENU BUTTON */}
-          <div className="md:hidden flex justify-end col-span-2">
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setOpen(!open)}
-              className="text-white"
+              className="text-[#141B2B] p-1"
             >
               {open ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -137,19 +103,23 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="fixed inset-0 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center gap-10 text-xl text-white z-40 md:hidden">
+        <div className="fixed inset-0 bg-[#FAFAF8] flex flex-col items-center justify-center gap-8 text-lg font-medium text-[#141B2B] z-40 md:hidden">
+          <a href="#home" onClick={() => setOpen(false)}>Home</a>
           <a href="#about" onClick={() => setOpen(false)}>About</a>
-          <a href="#skills" onClick={() => setOpen(false)}>Skills</a>
+          <a href="#experience" onClick={() => setOpen(false)}>Experience</a>
           <a href="#projects" onClick={() => setOpen(false)}>Projects</a>
+          <a href="#skills" onClick={() => setOpen(false)}>Skills</a>
           <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
 
           <a
-            href="#contact"
+            href={resume}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-indigo-500"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#005C55] text-white text-sm font-semibold shadow-md"
           >
-            Hire Me
-            <MdKeyboardDoubleArrowDown />
+            Resume
+            <ArrowUpRight size={18} />
           </a>
         </div>
       )}

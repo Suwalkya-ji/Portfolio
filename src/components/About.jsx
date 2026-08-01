@@ -1,90 +1,133 @@
 import { motion } from "framer-motion";
+import { GraduationCap, Award, Briefcase, Target } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="py-28 px-6 dark-gradient">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="py-24 px-6 bg-[#FAFAF8] border-t border-[#DCE2F7]">
+      <div className="max-w-7xl mx-auto space-y-16">
 
-        {/* Heading */}
+        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="max-w-3xl"
         >
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
-            About Me
+          <span className="text-xs font-semibold uppercase tracking-widest text-[#005C55] mb-3 block">
+            Background & Foundation
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold font-heading text-[#141B2B]">
+            About <span className="text-outline">Me.</span>
           </h2>
 
-          <p className="mt-6 text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-            Hi, I’m Dinesh Suwalkya a B.Tech graduate in Electrical Engineering
-            and a Full Stack Developer focused on building scalable, production ready web applications.
+          <p className="mt-6 text-[#3E4947] text-lg leading-relaxed">
+            Hi, I’m <span className="text-[#141B2B] font-semibold">Dinesh Suwalkya</span>, a Software Engineer & Full Stack Developer (MERN) with experience building scalable RESTful APIs, optimizing database performance, and integrating AI capabilities into production applications.
           </p>
 
-          <p className="mt-6 text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-            I specialize in the MERN stack (MongoDB, Express.js, React.js, Node.js),
-            with strong emphasis on backend architecture, REST API design,
-            secure authentication systems, and performance optimization.
-          </p>
-
-         <p className="mt-6 text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-            Backed by solid knowledge of Data Structures & Algorithms (C++),
-            I approach engineering problems with a system oriented mindset
-            prioritizing efficiency, scalability, and clean, maintainable code.
-        </p>
-
-          <p className="mt-4 text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-            I thrive in engineering environments that encourage continuous learning,
-            strong team collaboration, and building scalable, high impact digital products.
+          <p className="mt-4 text-[#3E4947] text-base leading-relaxed">
+            I hold a B.Tech in Electrical Engineering from Jaipur Engineering College & Research Centre (CGPA: 8.20/10). Backed by solid knowledge of Data Structures & Algorithms (C++), I approach engineering problems with a system-oriented mindset focused on scalability, clean code, and user impact.
           </p>
         </motion.div>
 
-        {/* Two Main Blocks */}
-        <div className="grid md:grid-cols-2 gap-10">
+        {/* Three Grid Blocks */}
+        <div className="grid md:grid-cols-3 gap-8">
 
-          {/* Expertise */}
+          {/* Education */}
           <motion.div
-            whileHover={{ y: -8 }}
-            className="p-10 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-lg hover:border-indigo-500/40 transition duration-300"
+            whileHover={{ y: -4 }}
+            className="p-8 rounded-2xl bg-white border border-[#DCE2F7] shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between"
           >
-            <h3 className="text-2xl font-semibold mb-6 text-white">
-              Core Technical Expertise
-            </h3>
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 rounded-xl bg-[#E6F4F1] text-[#005C55]">
+                  <GraduationCap className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold font-heading text-[#141B2B]">
+                  Education
+                </h3>
+              </div>
 
-            <ul className="space-y-4 text-gray-400 text-sm leading-relaxed">
-              <li>• Full Stack MERN Development</li>
-              <li>• REST API Design & Scalable Backend Architecture</li>
-              <li>• JWT Authentication & Role Based Access Control</li>
-              <li>• Database Design, Indexing & Query Optimization</li>
-              <li>• Real Time Systems & Third Party Integrations</li>
-              <li>• Performance Optimization & Cloud Deployment</li>
-              <li>• Modular, Scalable & Maintainable Code Practices</li>
-            </ul>
-
+              <div className="space-y-2">
+                <h4 className="text-base font-semibold text-[#141B2B]">
+                  B.Tech in Electrical Engineering
+                </h4>
+                <p className="text-[#3E4947] text-sm">
+                  Jaipur Engineering College & Research Centre
+                </p>
+                <p className="text-[#6E7977] text-xs font-mono">
+                  2020 – 2024
+                </p>
+                <div className="mt-4 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#E6F4F1] border border-[#005C55]/20 text-[#005C55] text-xs font-semibold">
+                  <Award className="w-3.5 h-3.5" /> CGPA: 8.20 / 10
+                </div>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Career Focus */}
+          {/* Core Technical Expertise */}
           <motion.div
-            whileHover={{ y: -8 }}
-            className="p-10 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-lg hover:border-indigo-500/40 transition duration-300"
+            whileHover={{ y: -4 }}
+            className="p-8 rounded-2xl bg-white border border-[#DCE2F7] shadow-sm hover:shadow-md transition duration-300"
           >
-            <h3 className="text-2xl font-semibold mb-6 text-white">
-              Roles I’m Targeting
-            </h3>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-3 rounded-xl bg-[#E6F4F1] text-[#005C55]">
+                <Briefcase className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold font-heading text-[#141B2B]">
+                Core Expertise
+              </h3>
+            </div>
 
-            <ul className="space-y-4 text-gray-400 text-sm leading-relaxed">
-              <li>• Full Stack Developer</li>
-              <li>• Backend Engineer</li>
-              <li>• Software Engineer</li>
+            <ul className="space-y-2.5 text-[#3E4947] text-sm leading-relaxed">
+              <li>• Full Stack MERN Development</li>
+              <li>• Modern React.js Component Architecture</li>
+              <li>• Responsive UI & Framer Motion Animations</li>
+              <li>• Scalable REST API & Backend Design</li>
+              <li>• AI Integration (RAG, LLMs, Vector DBs)</li>
+              <li>• Database Optimization & Query Indexing</li>
+              <li>• State Management (Redux & TanStack Query)</li>
             </ul>
+          </motion.div>
 
+          {/* Roles Targeted */}
+          <motion.div
+            whileHover={{ y: -4 }}
+            className="p-8 rounded-2xl bg-white border border-[#DCE2F7] shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 rounded-xl bg-[#E6F4F1] text-[#005C55]">
+                  <Target className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold font-heading text-[#141B2B]">
+                  Target Roles
+                </h3>
+              </div>
 
-            <div className="mt-8 p-6 rounded-xl bg-indigo-500/10 border border-indigo-500/20">
-              <p className="text-sm text-indigo-300 leading-relaxed">
-                Actively seeking opportunities to build scalable products,
-                improve system performance, and contribute to high impact
-                engineering teams.
+              <ul className="space-y-3 text-[#141B2B] text-sm font-semibold">
+                <li className="flex items-center gap-2.5">
+                  <span className="w-2 h-2 rounded-full bg-[#005C55]" />
+                  Software Engineer
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <span className="w-2 h-2 rounded-full bg-[#0051D5]" />
+                  Full Stack Developer (MERN)
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <span className="w-2 h-2 rounded-full bg-[#0F766E]" />
+                  Frontend Engineer / UI Developer
+                </li>
+                <li className="flex items-center gap-2.5">
+                  <span className="w-2 h-2 rounded-full bg-purple-500" />
+                  Backend Engineer
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-6 p-4 rounded-xl bg-[#E6F4F1] border border-[#005C55]/20">
+              <p className="text-xs text-[#005C55] font-medium leading-relaxed">
+                Actively seeking software engineering roles to build scalable, high-impact applications.
               </p>
             </div>
           </motion.div>
