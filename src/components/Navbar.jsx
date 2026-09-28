@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import resume from "../assets/Dinesh_Suwalkya_Software_Engineer_Resume.pdf";
+import resume from "../assets/Dinesh_Suwalkya_Software_Engineer.pdf";
 import MagneticButton from "./MagneticButton";
 
 const Navbar = () => {

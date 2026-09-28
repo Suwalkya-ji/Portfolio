@@ -6,7 +6,7 @@ const experiences = [
     role: "Software Developer",
     company: "Netparam Technologies Pvt. Ltd.",
     location: "Jaipur",
-    period: "03/2025 – 04/2026",
+    period: "06/2025 – 07/2026",
     status: "Current / Recent Role",
     bullets: [
       "Designed and maintained 30+ RESTful APIs in Node.js and Express.js for authentication, business workflows, and data integration, supporting production applications used by 500+ active users.",
