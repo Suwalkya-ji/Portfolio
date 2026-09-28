@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Code2, ArrowRight, FileText, Terminal as TerminalIcon, Layout, Server } from "lucide-react";
-import resume from "../assets/Dinesh_Suwalkya_Software_Engineer_Resume.pdf";
+import resume from "../assets/Dinesh_Suwalkya_Software_Engineer.pdf";
 import MagneticButton from "./MagneticButton";
 import { useState } from "react";
 

@@ -10,30 +10,6 @@ import MagneticButton from "./MagneticButton";
 const projects = [
   {
     number: "01",
-    category: "AI & FULL STACK",
-    icon: Sparkles,
-    title: "BuildPilot – AI-Powered Full-Stack Website Builder",
-    description:
-      "AI-powered website builder converting natural language prompts into production-ready React applications.\nFeatures live preview, Monaco Editor, Sandpack integration, RAG with Qdrant Vector DB, and BullMQ/Redis async pipelines.",
-    tech: ["React.js", "Node.js", "LLMs", "RAG", "Qdrant Vector DB", "BullMQ", "Redis", "Monaco Editor", "Sandpack"],
-    github: "https://github.com/Suwalkya-ji/BuildPilot",
-    live: "https://buildpilot.hopto.org/",
-    image: BuildPilot,
-  },
-  {
-    number: "02",
-    category: "E-COMMERCE PLATFORM",
-    icon: ShoppingCart,
-    title: "Dealskart – Full Stack E-Commerce Platform",
-    description:
-      "Full stack e-commerce platform supporting product discovery, cart, checkout, and order management for 500+ listings.\nIntegrated JWT authentication, Razorpay payment gateway, and inventory validation with MongoDB aggregation.",
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Razorpay", "REST APIs"],
-    github: "https://github.com/Suwalkya-ji/",
-    live: "https://dealkarts.in/",
-    image: DealsKart,
-  },
-  {
-    number: "03",
     category: "EDTECH PLATFORM",
     icon: GraduationCap,
     title: "StudyAdda – EdTech Learning Platform",
@@ -45,7 +21,7 @@ const projects = [
     image: studyAdda,
   },
   {
-    number: "04",
+    number: "02",
     category: "HOTEL BOOKING PLATFORM",
     icon: Hotel,
     title: "QuickStay – Hotel Booking Web Application",
@@ -56,6 +32,30 @@ const projects = [
     live: "https://quick-stay-virid.vercel.app/",
     image: QuickStay,
   },
+  {
+    number: "03",
+    category: "E-COMMERCE PLATFORM",
+    icon: ShoppingCart,
+    title: "Dealskart – Full Stack E-Commerce Platform",
+    description:
+      "Full stack e-commerce platform supporting product discovery, cart, checkout, and order management for 500+ listings.\nIntegrated JWT authentication, Razorpay payment gateway, and inventory validation with MongoDB aggregation.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Razorpay", "REST APIs"],
+    github: "https://github.com/Suwalkya-ji/",
+    live: "https://dealkarts.in/",
+    image: DealsKart,
+  },
+  {
+    number: "04",
+    category: "AI & FULL STACK",
+    icon: Sparkles,
+    title: "BuildPilot – AI-Powered Full-Stack Website Builder",
+    description:
+      "AI-powered website builder converting natural language prompts into production-ready React applications.\nFeatures live preview, Monaco Editor, Sandpack integration, RAG with Qdrant Vector DB, and BullMQ/Redis async pipelines.",
+    tech: ["React.js", "Node.js", "LLMs", "RAG", "Qdrant Vector DB", "BullMQ", "Redis", "Monaco Editor", "Sandpack"],
+    github: "https://github.com/Suwalkya-ji/BuildPilot",
+    live: "https://buildpilot.hopto.org/",
+    image: BuildPilot,
+  },  
   {
     number: "05",
     category: "REAL-TIME CHAT & LEARNING",
